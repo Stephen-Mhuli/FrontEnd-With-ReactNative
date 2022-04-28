@@ -8,8 +8,7 @@ import {
   Dimensions
 } from "react-native";
 import { Container, Header, Icon, Item, Input, Text } from "native-base";
-import { useFocusEffect } from '@react-navigation/native'
-//import baseUrl from "../../assets/common/baseUrl"
+import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 
 import ProductList from "./ProductList";
@@ -50,7 +49,7 @@ const ProductContainer = (props) => {
             console.log('Api call error')
           })
     
-        // Categories
+        //Categories
         axios
           .get(`${baseURL}categories`)
           .then((res) => {
@@ -153,7 +152,7 @@ const ProductContainer = (props) => {
        </View>
        ) : (
            <View style={[styles.center, { height: height / 2}]}>
-               <Text>No products found</Text>
+               <Text style={{fontFamily: 'nunito_semi_bold'}}>No products found</Text>
            </View>
        )}
       

@@ -11,11 +11,13 @@ import Toast from 'react-native-toast-message'
 import EasyButton from "../../Shared/StyledComponents/EasyButton"
 import { connect } from 'react-redux'
 import * as actions from '../../Redux/Actions/cartActions';
+import { useFonts } from 'expo-font';
 
 var { width } = Dimensions.get("window");
 
 const ProductCard = (props) => {
     const { name, price, image, countInStock } = props;
+    
 
     return (
         <View style={styles.container}>
@@ -31,7 +33,7 @@ const ProductCard = (props) => {
                     + '...' : name
                 }
             </Text>
-            <Text style={styles.price}>${price}</Text>
+            <Text style={styles.price}>{price} TZS</Text>
 
             { countInStock > 0 ? (
                 <View style={{ marginBottom: 60 }}>
@@ -48,7 +50,7 @@ const ProductCard = (props) => {
                         })
                     }}
                     >
-                        <Text style={{ color: "white"}}>Add</Text>
+                        <Text style={{ color: "white", fontFamily: 'nunito_bold'}}>ADD</Text>
                     </EasyButton>
                 </View>
             ) : <Text style={{ marginTop: 20 }}>Currently Unavailable</Text>}
@@ -90,14 +92,16 @@ const styles = StyleSheet.create({
         width: width / 2 - 20 - 10
     },
     title: {
-        fontWeight: "bold",
+        //fontWeight: "bold",
         fontSize: 14,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'nunito_semi_bold'
     },
     price: {
-        fontSize: 20,
-        color: 'orange',
-        marginTop: 10
+        fontSize: 16,
+        color: 'gray',
+        marginTop: 10,
+        fontFamily: 'nunito_bold'
     }
 })
 

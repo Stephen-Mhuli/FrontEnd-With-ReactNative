@@ -14,6 +14,7 @@ const Input = (props) => {
         onFocus={props.onFocus}
         secureTextEntry={props.secureTextEntry}
         keyboardType={props.keyboardType}
+        placeholderStyle={{ fontFamily: "nunito_regular" }}
         >
         </TextInput>
     );
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
         height: 60,
         backgroundColor: 'white',
         margin: 10,
-        borderRadius: 50,
+        borderRadius: 20,
         padding: 15,
         borderWidth: 2,
         borderColor: 'green'

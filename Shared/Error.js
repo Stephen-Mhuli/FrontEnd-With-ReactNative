@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         margin: 10
     },
     text: {
-        color: 'red'
+        color: 'red',
+        fontFamily: 'nunito_regular'
     }
 })
 

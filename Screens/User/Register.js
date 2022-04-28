@@ -92,7 +92,7 @@ const Register = (props) => {
         </View>
         <View>
           <EasyButton large primary onPress={() => register()}>
-            <Text style={{ color: "white" }}>Register</Text>
+            <Text style={styles.buttonTextStyle}>Register</Text>
           </EasyButton>
         </View>
         <View>
@@ -101,7 +101,7 @@ const Register = (props) => {
             secondary
             onPress={() => props.navigation.navigate("Login")}
           >
-            <Text style={{ color: "white" }}>Back to Login</Text>
+            <Text style={styles.buttonTextStyle}>Back to Login</Text>
           </EasyButton>
         </View>
       </FormContainer>
@@ -115,6 +115,11 @@ const styles = StyleSheet.create({
     margin: 10,
     alignItems: "center",
   },
+  buttonTextStyle: {
+    color: "white",
+    fontFamily: "nunito_semi_bold",
+    fontSize: 20,
+  }
 });
 
 export default Register;

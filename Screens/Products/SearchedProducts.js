@@ -14,7 +14,7 @@ const SearchedProduct = (props) => {
                         onPress={() => {
                             props.navigation.navigate("Product Detail", {item: item})
                         }}
-                        key={item._id.$oid}
+                        key={item._id}
                         avatar
                     >
                         <Left>
@@ -25,14 +25,14 @@ const SearchedProduct = (props) => {
                             />
                         </Left>
                         <Body>
-                            <Text>{item.name}</Text>
-                            <Text note>{item.description}</Text>
+                            <Text style={{ fontFamily: 'nunito_regular' }}>{item.name}</Text>
+                            <Text style={{ fontFamily: 'nunito_regular' }} note>{item.description}</Text>
                         </Body>
                     </ListItem>
                 ))
             ) : (
                 <View style={styles.center}>
-                    <Text style={{ alignSelf:  'center' }}>
+                    <Text style={{ alignSelf:  'center', fontFamily: 'nunito_regular' }}>
                         No products match the selected criteria
                     </Text>
                 </View>

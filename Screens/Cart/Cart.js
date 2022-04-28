@@ -64,7 +64,7 @@ const Cart = (props) => {
     <>
       {productUpdate ? (
         <Container>
-          <H1 style={{ alignSelf: "center" }}>Cart</H1>
+          <H1 style={{ alignSelf: "center", fontFamily: "nunito_semi_bold", marginTop: 4}}>Cart</H1>
           <SwipeListView
             data={productUpdate}
             renderItem={(data) => (
@@ -90,7 +90,7 @@ const Cart = (props) => {
           />
           <View style={styles.bottomContainer}>
             <Left>
-                <Text style={styles.price}>$ {totalPrice}</Text>
+                <Text style={styles.price}>{totalPrice} TZS</Text>
             </Left>
             <Right>
                 <EasyButton
@@ -98,7 +98,7 @@ const Cart = (props) => {
                   medium
                   onPress={() => props.clearCart()}
                 >
-                  <Text style={{ color: 'white' }}>Clear</Text>
+                  <Text style={styles.buttonTextStyle}>Clear</Text>
                 </EasyButton>
             </Right>
             <Right>
@@ -108,7 +108,7 @@ const Cart = (props) => {
                   medium
                   onPress={() => props.navigation.navigate('Checkout')}
                 >
-                <Text style={{ color: 'white' }}>Checkout</Text>
+                <Text style={styles.buttonTextStyle}>Checkout</Text>
                 </EasyButton>
               ) : (
                 <EasyButton
@@ -116,7 +116,7 @@ const Cart = (props) => {
                   medium
                   onPress={() => props.navigation.navigate('Login')}
                 >
-                <Text style={{ color: 'white' }}>Login</Text>
+                <Text style={styles.buttonTextStyle}>Login</Text>
                 </EasyButton>
               )}
                 
@@ -125,8 +125,8 @@ const Cart = (props) => {
         </Container>
       ) : (
         <Container style={styles.emptyContainer}>
-          <Text>Looks like your cart is empty</Text>
-          <Text>Add products to your cart to get started</Text>
+          <Text style={styles.cartInfo}>Looks like your cart is empty</Text>
+          <Text style={styles.cartInfo}>Add products to your cart to get started</Text>
         </Container>
       )}
     </>
@@ -162,9 +162,10 @@ const styles = StyleSheet.create({
       elevation: 20
   },
   price: {
-      fontSize: 18,
+      fontSize: 14,
       margin: 20,
-      color: 'red'
+      color: 'red',
+      fontFamily: "nunito_semi_bold",
   },
   hiddenContainer: {
     flex: 1,
@@ -178,6 +179,14 @@ const styles = StyleSheet.create({
     paddingRight: 25,
     height: 70,
     width: width / 1.2
+  },
+  cartInfo: {
+    fontFamily: 'nunito_italic'
+  },
+  buttonTextStyle: {
+    color: "white",
+    fontFamily: "nunito_semi_bold",
+    fontSize: 15,
   }
 });
 

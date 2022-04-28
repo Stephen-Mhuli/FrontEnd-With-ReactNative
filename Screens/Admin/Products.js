@@ -27,15 +27,15 @@ const ListHeader = () => {
             style={styles.listHeader}
         >
             <View style={styles.headerItem}></View>
-            <View style={styles.headerItem}>
+            {/* <View style={styles.headerItem}>
                 <Text style={{ fontWeight: '600'}}>Brand</Text>
-            </View>
+            </View> */}
             <View style={styles.headerItem}>
                 <Text style={{ fontWeight: '600'}}>Name</Text>
             </View>
-            <View style={styles.headerItem}>
+            {/* <View style={styles.headerItem}>
                 <Text style={{ fontWeight: '600'}}>Category</Text>
-            </View>
+            </View> */}
             <View style={styles.headerItem}>
                 <Text style={{ fontWeight: '600'}}>Price</Text>
             </View>
@@ -120,14 +120,14 @@ const Products = (props) => {
                 <Icon name="plus" size={18} color="white" />
                 <Text style={styles.buttonText}>Products</Text>
             </EasyButton>
-            <EasyButton
+            {/* <EasyButton
                 secondary
                 medium
                 onPress={() => props.navigation.navigate("Categories")}
             >
                 <Icon name="plus" size={18} color="white" />
                 <Text style={styles.buttonText}>Categories</Text>
-            </EasyButton>
+            </EasyButton> */}
         </View>
       <View>
           <Header searchBar rounded>

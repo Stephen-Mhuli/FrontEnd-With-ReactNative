@@ -2,9 +2,9 @@ import styled, { css } from "styled-components";
 
 const EasyButton = styled.TouchableOpacity`
     flex-direction: row;
-    border-radius: 50px;
-    padding: 15px;
-    margin: 15px;
+    border-radius: 15px;
+    padding: 13px;
+    margin: 10px;
     justify-content: center;
     background: transparent;
 

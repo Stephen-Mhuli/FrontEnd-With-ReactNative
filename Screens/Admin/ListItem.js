@@ -84,9 +84,9 @@ const ListItem = (props) => {
                     resizeMode="contain"
                     style={styles.image}
                 />
-                <Text style={styles.item}>{props.brand}</Text>
+                {/* <Text style={styles.item}>{props.brand}</Text> */}
                 <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.name}</Text>
-                <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.category.name}</Text>
+                {/* <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.category.name}</Text> */}
                 <Text style={styles.item}>$ {props.price}</Text>
             </TouchableOpacity>
         </View>

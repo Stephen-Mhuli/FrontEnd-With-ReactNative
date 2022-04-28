@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { Ionicons } from '@expo/vector-icons';
 
 // Stacks
 import HomeNavigator from "./HomeNavigator";
 import CartNavigator from "./CartNavigator";
 import UserNavigator from "./UserNavigator";
 import AdminNavigator from "./AdminNavigator";
+import SellerNavigator from "./AdminNavigator";
 
 import CartIcon from "../Shared/CartIcon";
 import AuthGlobal from "../Context/store/AuthGlobal";
@@ -23,7 +25,7 @@ const Main = () => {
       initialRouteName="Home"
       tabBarOptions={{
         keyboardHidesTabBar: true,
-        showLabel: false,
+        showLabel: true ,
         activeTintColor: "#e91e63",
       }}
     >
@@ -49,7 +51,17 @@ const Main = () => {
         }}
       />
       
-      {context.stateUser.user.isAdmin == true ? (
+        <Tab.Screen
+        name="Seller"
+        component={SellerNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="ios-person-add" size={24} color={color} />
+          ),
+        }}
+      />
+      
+      
         <Tab.Screen
         name="Admin"
         component={AdminNavigator}
@@ -59,7 +71,7 @@ const Main = () => {
           ),
         }}
       />
-      ): null }
+      {/* {context.stateUser.user.isAdmin == true ? (): null } */}
       
       <Tab.Screen
         name="User"

@@ -35,7 +35,7 @@ const Login = (props) => {
   };
 
   return (
-    <FormContainer title={"Login"}>
+    <FormContainer title={"LOGIN"}>
       <Input
         placeholder={"Enter Your Email"}
         name={"email"}
@@ -54,16 +54,16 @@ const Login = (props) => {
       <View style={styles.buttonGroup}>
         {error ? <Error message={error} /> : null}
         <EasyButton large primary onPress={() => handleSubmit()}>
-          <Text style={{ color: "white" }}>Login</Text>
+          <Text style={styles.buttonTextStyle}>Login</Text>
         </EasyButton>
       </View>
-      <View style={[{ marginTop: 40 }, styles.buttonGroup]}>
+      <View style={[{ marginTop: 10 }, styles.buttonGroup]}>
         <Text style={styles.middleText}>Don't have an account yet?</Text>
         <EasyButton
         large
         secondary 
         onPress={() => props.navigation.navigate("Register")}>
-          <Text style={{ color: "white" }}>Register</Text>
+          <Text style={styles.buttonTextStyle}>Register</Text>
         </EasyButton>
       </View>
     </FormContainer>
@@ -76,9 +76,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   middleText: {
-    marginBottom: 20,
+    marginBottom: 10,
     alignSelf: "center",
+    fontSize: 16,
+    fontFamily: 'nunito_regular'
   },
+  buttonTextStyle: {
+    color: "white",
+    fontFamily: "nunito_semi_bold",
+    fontSize: 20,
+  }
 });
 
 export default Login;

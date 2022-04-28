@@ -58,14 +58,14 @@ const UserProfile = (props) => {
     return (
        <Container style={styles.container}>
            <ScrollView contentContainerStyle={styles.subContainer}>
-               <Text style={{ fontSize: 30 }}>
+               <Text style={{ fontSize: 30 , fontFamily: 'nunito_regular'}}>
                    {userProfile ? userProfile.name : "" }
                </Text>
-               <View style={{ marginTop: 20 }}>
+               <View style={{ marginTop: 20, fontFamily: 'nunito_regular' }}>
                     <Text style={{ margin: 10 }}>
                         Email: {userProfile ? userProfile.email : ""}
                     </Text>
-                    <Text style={{ margin: 10 }}>
+                    <Text style={{ margin: 10 , fontFamily: 'nunito_regular'}}>
                         Phone: {userProfile ? userProfile.phone : ""}
                     </Text>
                </View>
@@ -76,7 +76,7 @@ const UserProfile = (props) => {
                     ]}/>
                </View>
                <View style={styles.order}>
-                   <Text style={{ fontSize: 20 }}>My Orders</Text>
+                   <Text style={{ fontSize: 20, fontFamily: 'nunito_semi_bold' }}>My Orders</Text>
                    <View>
                        {orders ? (
                            orders.map((x) => {
@@ -84,7 +84,7 @@ const UserProfile = (props) => {
                            })
                        ) : (
                            <View style={styles.order}>
-                               <Text>You have no orders</Text>
+                               <Text style={{fontFamily: 'nunito_regular'}}>You have no orders</Text>
                            </View>
                        )}
                    </View>

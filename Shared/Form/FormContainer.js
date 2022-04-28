@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 30,
+        fontSize: 24,
+        fontWeight: "600",
+        fontFamily: "nunito_semi_bold"
     }
 })
 

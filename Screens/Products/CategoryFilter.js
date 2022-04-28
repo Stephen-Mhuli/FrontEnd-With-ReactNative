@@ -22,7 +22,7 @@ const CategoryFilter = (props) => {
                             props.active == -1 ? styles.active : styles.inactive
                         ]}
                     >
-                        <Text style={{ color: 'white' }}>All</Text>
+                        <Text style={{ color: 'white', fontFamily: "nunito_semi_bold" }}>All</Text>
                     </Badge>
                 </TouchableOpacity>
                 {props.categories.map((item) => (
@@ -39,7 +39,8 @@ const CategoryFilter = (props) => {
                             props.active == props.categories.indexOf(item) ? styles.active : styles.inactive
                           ]}
                       >
-                          <Text style={{ color: 'white' }}>{item.name}</Text>
+                          <Text style={{ color: 'white', fontFamily: "nunito_semi_bold"  }}>{item.name}</Text>
+                          
                       </Badge>
                   </TouchableOpacity>
                 ))}

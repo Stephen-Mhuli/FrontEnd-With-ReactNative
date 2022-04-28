@@ -17,10 +17,10 @@ const CartItem = (props) => {
       </Left>
       <Body style={styles.body}>
         <Left>
-          <Text>{data.name}</Text>
+          <Text style={styles.itemTextStyle}>{data.name}</Text>
         </Left>
         <Right>
-          <Text>$ {data.price}</Text>
+          <Text style={styles.itemTextStyle}>{data.price} TZS</Text>
         </Right>
       </Body>
     </ListItem>
@@ -37,6 +37,10 @@ const styles = StyleSheet.create({
         margin: 10,
         alignItems: 'center',
         flexDirection: 'row'
+    },
+    itemTextStyle: {
+      fontFamily: "nunito_regular",
+      fontSize: 16
     }
 })
 

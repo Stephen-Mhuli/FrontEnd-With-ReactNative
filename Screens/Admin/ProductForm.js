@@ -102,10 +102,10 @@ const ProductForm = (props) => {
     const addProduct = () => {
         if (
             name == "" ||
-            brand == "" ||
+            //brand == "" ||
             price == "" ||
             description == "" ||
-            category == "" ||
+            //category == "" ||
             countInStock == ""
         ) {
             setError("Please fill in the form correctly")
@@ -121,10 +121,10 @@ const ProductForm = (props) => {
             name: newImageUri.split("/").pop()
         });
         formData.append("name", name);
-        formData.append("brand", brand);
+        //formData.append("brand", brand);
         formData.append("price", price);
         formData.append("description", description);
-        formData.append("category", category);
+        //formData.append("category", category);
         formData.append("countInStock", countInStock);
         formData.append("richDescription", richDescription);
         formData.append("rating", rating);
@@ -249,7 +249,7 @@ const ProductForm = (props) => {
             value={description}
             onChangeText={(text) => setDescription(text)}
            />
-           <Item picker>
+           {/* <Item picker>
                 <Picker
                     mode="dropdown"
                     iosIcon={<Icon color={"#007aff"} name="arrow-down" />}
@@ -264,7 +264,7 @@ const ProductForm = (props) => {
                         return <Picker.Item key={c.id} label={c.name} value={c.id} />
                     })}
                 </Picker>
-           </Item>
+           </Item> */}
            {err ? <Error message={err} /> : null}
            <View style={styles.buttonContainer}>
                <EasyButton

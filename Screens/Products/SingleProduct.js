@@ -51,18 +51,18 @@ const SingleProduct = (props) => {
                 </View>
                 <View style={styles.availabilityContainer}>
                     <View style={styles.availability}>
-                        <Text style={{ marginRight: 10 }}>
+                        <Text style={{ marginRight: 10 , fontFamily: "nunito_semi_bold"}}>
                             Availability: {availabilityText}
                         </Text>
                         {availability}
                     </View>
-                    <Text>{item.description}</Text>
+                    <Text style={styles.descrip}>{item.description}</Text>
                 </View>
             </ScrollView>
 
             <View style={styles.bottomContainer}>
                 <Left>
-                    <Text style={styles.price}>$ {item.price}</Text>
+                    <Text style={styles.price}>{item.price} TZS</Text>
                 </Left>
                 <Right>
                    <EasyButton 
@@ -77,7 +77,7 @@ const SingleProduct = (props) => {
                         })
                 }}
                    >
-                       <Text style={{ color: 'white'}}>Add</Text>
+                       <Text style={{ color: 'white', fontFamily: 'nunito_bold'}}>ADD</Text>
                    </EasyButton>
                 </Right>
             </View>
@@ -113,13 +113,15 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     contentHeader: {
-        fontWeight: 'bold',
-        marginBottom: 20
+        //fontWeight: 'bold',
+        marginBottom: 18,
+        fontFamily: 'nunito_semi_bold'
     },
     contentText: {
         fontSize: 18,
-        fontWeight: 'bold',
-        marginBottom: 20
+        //fontWeight: 'bold',
+        marginBottom: 20,
+        fontFamily: 'nunito_semi_bold'
     },
     bottomContainer: {
         flexDirection: 'row',
@@ -128,10 +130,15 @@ const styles = StyleSheet.create({
         left: 0,
         backgroundColor: 'white'
     },
+    descrip:{
+        fontSize: 17,
+        fontFamily: "nunito_regular"
+    },
     price: {
-        fontSize: 24,
+        fontSize: 18,
         margin: 20,
-        color: 'red'
+        color: 'red',
+        fontFamily: 'nunito_semi_bold'
     },
     availabilityContainer: {
         marginBottom: 20,

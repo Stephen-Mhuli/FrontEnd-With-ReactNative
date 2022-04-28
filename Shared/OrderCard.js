@@ -137,7 +137,7 @@ const OrderCard = (props) => {
               })}
             </Picker>
             <EasyButton secondary large onPress={() => updateOrder()}>
-              <Text style={{ color: "white" }}>Update</Text>
+              <Text style={{ color: "white", fontFamily: 'nunito_regular' }}>Update</Text>
             </EasyButton>
           </View>
         ) : null}
