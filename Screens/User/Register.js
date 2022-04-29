@@ -50,6 +50,8 @@ const Register = (props) => {
           type: "error",
           text1: "Something went wrong",
           text2: "Please try again",
+          visibilityTime: 3000,
+          autoHide: true,
         });
       });
   };

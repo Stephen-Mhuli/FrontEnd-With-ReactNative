@@ -31,6 +31,7 @@ export const loginUser = (user, dispatch) => {
             type: "error",
             text1: "Please provide correct credentials",
             text2: ""
+           
         });
         logoutUser(dispatch)
     });

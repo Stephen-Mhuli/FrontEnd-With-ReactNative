@@ -2,9 +2,10 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import {View, Text } from "react-native";
 import Toast from "react-native-toast-message";
 import { useFonts } from 'expo-font';
-import { AppLoading } from 'expo';
+// import { AppLoading } from 'expo';
 
 
 
@@ -26,6 +27,19 @@ import Header from "./Shared/Header";
 
 LogBox.ignoreAllLogs(true);
 
+//Toast message customization
+
+const toastConfig = {
+  'success': (internalState) => (
+      <Text style={{  fontFamily: "nunito_italic"}}>{internalState.text1}</Text>
+  ),
+  'error': (internalState) => (
+      <Text style={{  fontFamily: "nunito_italic"}}>{internalState.text1}</Text>
+  ),
+  'info': () => {},
+
+}
+
 
 
 export default function App() {
@@ -36,7 +50,6 @@ export default function App() {
     nunito_semi_bold: require('./assets/fonts/Nunito-SemiBold.ttf'),
     nunito_italic: require('./assets/fonts/Nunito-Italic.ttf'),
     nunito_regular: require('./assets/fonts/Nunito-Regular.ttf'),
-
 
   });
   
