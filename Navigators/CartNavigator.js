@@ -20,7 +20,10 @@ function MyStack() {
                 name="Checkout"
                 component={CheckoutNavigator}
                 options={{
-                    title: 'Checkout'
+                    title: 'Checkout',
+                    headerTitleStyle: {
+                        fontFamily: "nunito_semi_bold"
+                      }
                 }}
             />
         </Stack.Navigator>

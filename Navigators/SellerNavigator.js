@@ -16,7 +16,10 @@ function MyStack(){
                 name="Products"
                 component={Products}
                 options={{
-                    title: "Products"
+                    title: 'Products',
+                    headerTitleStyle: {
+                        fontFamily: "nunito_semi_bold"
+                      }
                 }}
             />
             <Stack.Screen name="Categories" component={Categories} />

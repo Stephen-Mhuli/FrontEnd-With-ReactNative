@@ -20,7 +20,11 @@ function MyStack() {
                 name='Product Detail'
                 component={SingleProduct}
                 options={{
+                    title: 'Product Details',
                     headerShown: true,
+                    headerTitleStyle: {
+                        fontFamily: "nunito_semi_bold"
+                      }
                 }}
             />
         </Stack.Navigator>

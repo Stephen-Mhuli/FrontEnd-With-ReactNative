@@ -4,6 +4,8 @@ import { ListItem, Badge, Text } from 'native-base';
 
 const CategoryFilter = (props) => {
 
+    //  const categories = props;
+
     return(
         <ScrollView
             bounces={true}
@@ -25,9 +27,9 @@ const CategoryFilter = (props) => {
                         <Text style={{ color: 'white', fontFamily: "nunito_semi_bold" }}>All</Text>
                     </Badge>
                 </TouchableOpacity>
-                {props.categories.map((item) => (
+                {/* {props.categories.map((item, index) => (
                       <TouchableOpacity
-                      key={item._id}
+                      key={index}
                       onPress={() => {
                           props.categoryFilter(item._id), 
                           props.setActive(props.categories.indexOf(item))
@@ -43,7 +45,7 @@ const CategoryFilter = (props) => {
                           
                       </Badge>
                   </TouchableOpacity>
-                ))}
+                ))} */}
             </ListItem>
         </ScrollView>
     )
