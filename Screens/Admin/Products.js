@@ -31,13 +31,13 @@ const ListHeader = () => {
                 <Text style={{ fontWeight: '600'}}>Brand</Text>
             </View> */}
             <View style={styles.headerItem}>
-                <Text style={{ fontWeight: '600'}}>Name</Text>
+                <Text style={{ fontWeight: '600', fontFamily: "nunito_regular"}}>Name</Text>
             </View>
             {/* <View style={styles.headerItem}>
                 <Text style={{ fontWeight: '600'}}>Category</Text>
             </View> */}
             <View style={styles.headerItem}>
-                <Text style={{ fontWeight: '600'}}>Price</Text>
+                <Text style={{ fontWeight: '600',fontFamily: "nunito_regular"}}>Price</Text>
             </View>
         </View>
     )
@@ -184,13 +184,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     buttonContainer: {
-        margin: 20,
+        margin: 10,
         alignSelf: 'center',
         flexDirection: 'row'
     },
     buttonText: {
         marginLeft: 4,
-        color: 'white'
+        color: 'white',
+        fontFamily: "nunito_semi_bold"
     }
 })
 

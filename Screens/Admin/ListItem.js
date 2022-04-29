@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
     item: {
         flexWrap: "wrap",
         margin: 3,
-        width: width / 6
+        width: width / 6,
+        fontFamily: "nunito_regular"
     },
     centeredView: {
         flex: 1,
@@ -133,7 +134,8 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: "white",
-        fontWeight: "bold"
+        fontFamily: "nunito_regular"
+        //fontWeight: "bold"
     }
 })
 

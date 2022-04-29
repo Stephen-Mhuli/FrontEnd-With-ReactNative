@@ -198,7 +198,7 @@ const ProductForm = (props) => {
                </TouchableOpacity>
            </View>
            <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline"}}>Brand</Text>
+               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Brand</Text>
            </View>
            <Input 
             placeholder="Brand"
@@ -208,7 +208,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setBrand(text)}
            />
            <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline"}}>Name</Text>
+               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Name</Text>
            </View>
            <Input 
             placeholder="Name"
@@ -218,7 +218,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setName(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline"}}>Price</Text>
+               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Price</Text>
            </View>
            <Input 
             placeholder="Price"
@@ -229,7 +229,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setPrice(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline"}}>Count in Stock</Text>
+               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Count in Stock</Text>
            </View>
            <Input 
             placeholder="Stock"
@@ -240,7 +240,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setCountInStock(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline"}}>Description</Text>
+               <Text style={{ textDecorationLine: "underline", fontFamily: "nunito_regular"}}>Description</Text>
            </View>
            <Input 
             placeholder="Description"
@@ -291,7 +291,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     buttonText: {
-        color: "white"
+        color: "white",
+        fontFamily: "nunito_semi_bold"
     },
     imageContainer: {
         width: 200,
