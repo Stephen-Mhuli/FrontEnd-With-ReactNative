@@ -87,7 +87,7 @@ const ListItem = (props) => {
                 {/* <Text style={styles.item}>{props.brand}</Text> */}
                 <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.name}</Text>
                 {/* <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.category.name}</Text> */}
-                <Text style={styles.item}>$ {props.price}</Text>
+                <Text style={styles.item}>{props.price} TZS</Text>
             </TouchableOpacity>
         </View>
     )
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flexWrap: "wrap",
+        fontFamily: "nunito_regular",
         margin: 3,
         width: width / 6
     },
@@ -133,7 +134,8 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: "white",
-        fontWeight: "bold"
+        fontFamily: "nunito_semi_bold"
+        //fontWeight: "bold"
     }
 })
 
