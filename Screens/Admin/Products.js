@@ -59,7 +59,8 @@ const Products = (props) => {
                         setToken(res)
                     })
                     .catch((error) => console.log(error))
-
+                    
+                // API call
                 axios
                     .get(`${baseURL}products`)
                     .then((res) => {
