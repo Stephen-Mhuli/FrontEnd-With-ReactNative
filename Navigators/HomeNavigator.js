@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 function MyStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen 
+            <Stack.Screen
                 name='Home'
                 component={ProductContainer}
                 options={{

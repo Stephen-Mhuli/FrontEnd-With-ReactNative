@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   emptyContainer: {
     height: height,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center", 
   },
   bottomContainer: {
       flexDirection: 'row',

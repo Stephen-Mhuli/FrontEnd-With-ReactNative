@@ -11,7 +11,7 @@ import Toast from 'react-native-toast-message'
 import EasyButton from "../../Shared/StyledComponents/EasyButton"
 import { connect } from 'react-redux'
 import * as actions from '../../Redux/Actions/cartActions';
-import { useFonts } from 'expo-font';
+//import { useFonts } from 'expo-font';
 
 var { width } = Dimensions.get("window");
 
@@ -53,7 +53,7 @@ const ProductCard = (props) => {
                         <Text style={{ color: "white", fontFamily: 'nunito_bold'}}>ADD</Text>
                     </EasyButton>
                 </View>
-            ) : <Text style={{ marginTop: 20 }}>Currently Unavailable</Text>}
+            ) : <Text style={{ marginTop: 20,fontFamily: 'nunito_regular' }}>Currently Unavailable</Text>}
         </View>
     )
 }

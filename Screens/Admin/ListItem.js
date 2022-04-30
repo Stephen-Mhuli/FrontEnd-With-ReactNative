@@ -58,7 +58,7 @@ const ListItem = (props) => {
                         <EasyButton 
                         medium 
                         danger
-                        onPress={() => [props.delete(props._id), setModalVisible(false)]}
+                        onPress={() => [props.delete(props.id), setModalVisible(false)]}
                         >
                             <Text style={styles.textStyle}>Delete</Text>
                         </EasyButton>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flexWrap: "wrap",
-        margin: 3,
+        margin: 6,
         width: width / 6,
         fontFamily: "nunito_regular"
     },

@@ -52,7 +52,7 @@ const ProductForm = (props) => {
             setDescription(props.route.params.item.description);
             setMainImage(props.route.params.item.image);
             setImage(props.route.params.item.image);
-            setCategory(props.route.params.item.category._id);
+            //setCategory(props.route.params.item.category._id);
             setCountInStock(props.route.params.item.countInStock.toString());
         }
 
@@ -190,14 +190,14 @@ const ProductForm = (props) => {
     }
 
     return (
-       <FormContainer title="Add Product">
+       <FormContainer>
            <View style={styles.imageContainer}>
                <Image style={styles.image} source={{uri: mainImage}}/>
                <TouchableOpacity onPress={pickImage} style={styles.imagePicker}>
                    <Icon style={{ color: "white"}} name="camera"/>
                </TouchableOpacity>
            </View>
-           <View style={styles.label}>
+           {/* <View style={styles.label}>
                <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Brand</Text>
            </View>
            <Input 
@@ -206,7 +206,7 @@ const ProductForm = (props) => {
             id="brand"
             value={brand}
             onChangeText={(text) => setBrand(text)}
-           />
+           /> */}
            <View style={styles.label}>
                <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Name</Text>
            </View>

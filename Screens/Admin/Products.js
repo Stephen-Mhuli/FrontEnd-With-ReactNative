@@ -109,7 +109,7 @@ const Products = (props) => {
                 medium
                 onPress={() => props.navigation.navigate("Orders")}
             >
-                <Icon name="shopping-bag" size={18} color="white" />
+                <Icon name="shopping-bag" size={18} color="yellow" />
                 <Text style={styles.buttonText}>Orders</Text>
             </EasyButton>
             <EasyButton
@@ -117,8 +117,8 @@ const Products = (props) => {
                 medium
                 onPress={() => props.navigation.navigate("ProductForm")}
             >
-                <Icon name="plus" size={18} color="white" />
-                <Text style={styles.buttonText}>Products</Text>
+                <Icon name="plus" size={18} color="yellow" />
+                <Text style={styles.buttonText}>Product</Text>
             </EasyButton>
             {/* <EasyButton
                 secondary
@@ -190,8 +190,9 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         marginLeft: 4,
-        color: 'white',
-        fontFamily: "nunito_semi_bold"
+        color: 'black',
+        fontFamily: "nunito_bold",
+        fontSize: 15
     }
 })
 
