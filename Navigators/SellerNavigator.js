@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStacKNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Orders from "../Screens/Admin/Order"
 import Products from "../Screens/Admin/Products"
@@ -7,7 +7,7 @@ import ProductForm from "../Screens/Admin/ProductForm"
 import Categories from "../Screens/Admin/Categories"
 
 
-const Stack = createStacKNavigator();
+const Stack = createStackNavigator();
 
 function MyStack(){
     return(

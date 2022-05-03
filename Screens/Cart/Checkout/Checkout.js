@@ -3,6 +3,7 @@ import { Text, View, Button } from 'react-native'
 import { Item, Picker, Toast } from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import FormContainer from '../../../Shared/Form/FormContainer'
+
 import Input from '../../../Shared/Form/Input'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import AuthGlobal from "../../../Context/store/AuthGlobal"
@@ -39,6 +40,7 @@ const Checkout = (props) => {
         }
 
         return () => {
+            abortController.abort();
             setOrderItems();
         }
     }, [])
@@ -135,4 +137,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Checkout)
+export default connect(mapStateToProps)(Checkout);
