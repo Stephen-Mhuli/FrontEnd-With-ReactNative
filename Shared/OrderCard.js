@@ -103,21 +103,21 @@ const OrderCard = (props) => {
   return (
     <View style={[{ backgroundColor: cardColor }, styles.container]}>
       <View style={styles.container}>
-        <Text>Order Number: #{props.id}</Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>Order Number: #{props.id}</Text>
       </View>
       <View style={{ marginTop: 10 }}>
-        <Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>
           Status: {statusText} {orderStatus}
         </Text>
-        <Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>
           Address: {props.shippingAddress1} {props.shippingAddress2}
         </Text>
-        <Text>City: {props.city}</Text>
-        <Text>Country: {props.country}</Text>
-        <Text>Date Ordered: {props.dateOrdered.split("T")[0]}</Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>City: {props.city}</Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>Country: {props.country}</Text>
+        <Text style={{ fontFamily: 'nunito_regular' }}>Date Ordered: {props.dateOrdered.split("T")[0]}</Text>
         <View style={styles.priceContainer}>
-          <Text>Price: </Text>
-          <Text style={styles.price}>$ {props.totalPrice}</Text>
+          <Text style={{ fontFamily: 'nunito_regular' }}>Price: </Text>
+          <Text style={styles.price}>TZS {props.totalPrice}</Text>
         </View>
         {props.editMode ? (
           <View>
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     margin: 10,
-    borderRadius: 10,
+    borderRadius: 20,
   },
   title: {
     backgroundColor: "#62B1F6",

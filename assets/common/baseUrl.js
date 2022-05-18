@@ -4,7 +4,7 @@ import { Platform } from 'react-native'
 let baseURL = '';
 
 {Platform.OS == 'android'
-? baseURL = 'https://aeaf-197-250-230-5.in.ngrok.io/api/v1/'
+? baseURL = 'https://efec-41-59-49-118.eu.ngrok.io/api/v1/'
 : baseURL = 'http://localhost:3000/api/v1/';}
 
 export default baseURL;

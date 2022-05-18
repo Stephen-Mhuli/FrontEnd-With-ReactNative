@@ -52,7 +52,7 @@ const ProductForm = (props) => {
             setDescription(props.route.params.item.description);
             setMainImage(props.route.params.item.image);
             setImage(props.route.params.item.image);
-            //setCategory(props.route.params.item.category._id);
+            setCategory(props.route.params.item.category._id);
             setCountInStock(props.route.params.item.countInStock.toString());
         }
 
@@ -121,10 +121,10 @@ const ProductForm = (props) => {
             name: newImageUri.split("/").pop()
         });
         formData.append("name", name);
-        //formData.append("brand", brand);
+        formData.append("brand", brand);
         formData.append("price", price);
         formData.append("description", description);
-        //formData.append("category", category);
+        formData.append("category", category);
         formData.append("countInStock", countInStock);
         formData.append("richDescription", richDescription);
         formData.append("rating", rating);
@@ -197,7 +197,7 @@ const ProductForm = (props) => {
                    <Icon style={{ color: "white"}} name="camera"/>
                </TouchableOpacity>
            </View>
-           {/* <View style={styles.label}>
+           <View style={styles.label}>
                <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Brand</Text>
            </View>
            <Input 
@@ -206,7 +206,7 @@ const ProductForm = (props) => {
             id="brand"
             value={brand}
             onChangeText={(text) => setBrand(text)}
-           /> */}
+           />
            <View style={styles.label}>
                <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Name</Text>
            </View>
@@ -249,7 +249,7 @@ const ProductForm = (props) => {
             value={description}
             onChangeText={(text) => setDescription(text)}
            />
-           {/* <Item picker>
+           <Item picker>
                 <Picker
                     mode="dropdown"
                     iosIcon={<Icon color={"#007aff"} name="arrow-down" />}
@@ -264,7 +264,7 @@ const ProductForm = (props) => {
                         return <Picker.Item key={c.id} label={c.name} value={c.id} />
                     })}
                 </Picker>
-           </Item> */}
+           </Item>
            {err ? <Error message={err} /> : null}
            <View style={styles.buttonContainer}>
                <EasyButton

@@ -22,7 +22,15 @@ function MyStack() {
                 }}
             />
             <Stack.Screen name="Categories" component={Categories} />
-            <Stack.Screen name="Orders" component={Orders} />
+            <Stack.Screen
+             name="Orders" 
+             component={Orders} 
+             options={{
+                title: 'Orders',
+                headerTitleStyle: {
+                    fontFamily: "nunito_bold"
+                  }
+            }}/>
             <Stack.Screen
              name="ProductForm" 
              component={ProductForm} 

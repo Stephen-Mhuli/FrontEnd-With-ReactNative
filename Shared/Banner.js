@@ -27,7 +27,7 @@ const Banner = () => {
             style={{ height: width / 2 }}
             showButtons={false}
             autoplay={true}
-            autoplayTimeout={4}
+            autoplayTimeout={3}
           >
             {bannerData.map((item) => {
               return (
@@ -40,7 +40,7 @@ const Banner = () => {
               );
             })}
           </Swiper>
-          <View style={{ height: 20 }}></View>
+          <View style={{ height: 10 }}></View>
         </View>
       </View>
     </ScrollView>

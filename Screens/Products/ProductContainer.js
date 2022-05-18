@@ -133,23 +133,25 @@ const ProductContainer = (props) => {
        </View>
        <View>
          <CategoryFilter
-           categories={categories.categories}
+          //  categories={categories.categories}
+           categories={categories}
            categoryFilter={changeCtg}
            productsCtg={productsCtg}
            active={active}
            setActive={setActive}
          />
        </View>
+       {/* {productsCtg.length > 0 ? ( */}
        {productsCtg.length > 0 ? (
        <View style={styles.listContainer}>
-           {productsCtg.map((item) => {
+           {productsCtg.map((item,index) => {
                return(
                    <ProductList
                        navigation={props.navigation}
-                       key={item.name}
+                       key={item.id}
                        item={item}
                    />
-               )
+               );
            })}
        </View>
        ) : (

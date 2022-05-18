@@ -24,20 +24,21 @@ const ProductCard = (props) => {
             <Image 
             style={styles.image}
             resizeMode="contain"
-            source={{uri: image ? 
-                image : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'}}
+            source={require('../../assets/images/maize.jpeg')}
+            // source={{uri: image ? 
+            //     image : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'}}
             />
             <View style={styles.card}/>
-            <Text style={styles.title}>
-                {name.length > 15 ? name.substring(0, 15 - 3)
+              <Text style={styles.title}>
+                  {name.length > 15 ? name.substring(0, 15 - 3)
                     + '...' : name
-                }
-            </Text>
-            <Text style={styles.price}>{price} TZS</Text>
+                  }
+              </Text>
+              <Text style={styles.price}>{price} TZS</Text> 
 
             { countInStock > 0 ? (
-                <View style={{ marginBottom: 60 }}>
-                    <EasyButton 
+                <View >
+                    {/* <EasyButton 
                     primary
                     medium
                     onPress={() => {
@@ -51,7 +52,7 @@ const ProductCard = (props) => {
                     }}
                     >
                         <Text style={{ color: "white", fontFamily: 'nunito_bold'}}>ADD</Text>
-                    </EasyButton>
+                    </EasyButton> */}
                 </View>
             ) : <Text style={{ marginTop: 20,fontFamily: 'nunito_regular' }}>Currently Unavailable</Text>}
         </View>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         height: width / 1.7,
         padding: 10,
         borderRadius: 10,
-        marginTop: 55,
+        marginTop: 25,
         marginBottom: 5,
         marginLeft: 10,
         alignItems: 'center',
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
         height: width / 2 - 20 - 30,
         backgroundColor: 'transparent',
         position: 'absolute',
-        top: -45
+        top: -2
     },
     card: {
         marginBottom: 10,
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     },
     title: {
         //fontWeight: "bold",
+        marginTop: 30,
         fontSize: 14,
         textAlign: 'center',
         fontFamily: 'nunito_semi_bold'
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     price: {
         fontSize: 16,
         color: 'gray',
-        marginTop: 10,
+        marginTop: 20,
         fontFamily: 'nunito_bold'
     }
 })

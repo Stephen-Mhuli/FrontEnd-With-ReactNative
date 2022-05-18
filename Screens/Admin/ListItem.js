@@ -76,18 +76,19 @@ const ListItem = (props) => {
                 }]}
             >
                 <Image 
-                    source={{
-                        uri: props.image
-                        ? props.image
-                        : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'
-                    }}
+                source={require('../../assets/images/maize.jpeg')}
+                    // source={{
+                    //     uri: props.image
+                    //     ? props.image
+                    //     : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'
+                    // }}
                     resizeMode="contain"
                     style={styles.image}
                 />
                 {/* <Text style={styles.item}>{props.brand}</Text> */}
                 <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.name}</Text>
                 {/* <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.category.name}</Text> */}
-                <Text style={styles.item}>$ {props.price}</Text>
+                <Text style={styles.item}> {props.price}</Text>
             </TouchableOpacity>
         </View>
     )

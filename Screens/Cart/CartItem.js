@@ -8,11 +8,12 @@ const CartItem = (props) => {
     <ListItem style={styles.listItem} key={Math.random()} avatar>
       <Left>
         <Thumbnail
-          source={{
-            uri: data.image
-              ? data.image
-              : "https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png",
-          }}
+        source={require('../../assets/images/maize.jpeg')}
+          // source={{
+          //   uri: data.image
+          //     ? data.image
+          //     : "https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png",
+          // }}
         />
       </Left>
       <Body style={styles.body}>
