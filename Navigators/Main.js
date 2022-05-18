@@ -9,7 +9,7 @@ import HomeNavigator from "./HomeNavigator";
 import CartNavigator from "./CartNavigator";
 import UserNavigator from "./UserNavigator";
 import AdminNavigator from "./AdminNavigator";
-import SellerNavigator from "./AdminNavigator";
+import SellerNavigator from "./SellerNavigator";
 
 import CartIcon from "../Shared/CartIcon";
 import AuthGlobal from "../Context/store/AuthGlobal";
