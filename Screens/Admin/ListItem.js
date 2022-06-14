@@ -76,12 +76,12 @@ const ListItem = (props) => {
                 }]}
             >
                 <Image 
-                source={require('../../assets/images/maize.jpeg')}
-                    // source={{
-                    //     uri: props.image
-                    //     ? props.image
-                    //     : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'
-                    // }}
+                // source={require('../../assets/images/maize.jpeg')}
+                    source={{
+                        uri: props.image
+                        ? props.image
+                        : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'
+                    }}
                     resizeMode="contain"
                     style={styles.image}
                 />

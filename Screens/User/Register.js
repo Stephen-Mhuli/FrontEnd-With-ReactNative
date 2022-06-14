@@ -19,7 +19,7 @@ const Register = (props) => {
 
   const register = () => {
     if (email === "" || name === "" || phone === "" || password === "") {
-      setError("Please fill in the form correctly");
+      setError("Please fill in the form correctly,all fields are required");
     }
 
     let user = {
@@ -56,6 +56,14 @@ const Register = (props) => {
       });
   };
 
+  // const emailValidator = () => {
+  //   if (state.email == "") {
+  //     setState({...state, emailError: "Email Field canot be empty" });
+  //   } else {
+  //     setState({...state, emailError: "" });
+  //   }
+  // };
+
   return (
     <KeyboardAwareScrollView
       viewIsInsideTabBar={true}
@@ -67,7 +75,7 @@ const Register = (props) => {
           placeholder={"Enter your Email"}
           name={"email"}
           id={"email"}
-          onChangeText={(text) => setEmail(text.toLowerCase())}
+          onChangeText={(text) => setEmail(text.toLowerCase().trim())}
         />
         <Input
           placeholder={"Enter Your Name"}

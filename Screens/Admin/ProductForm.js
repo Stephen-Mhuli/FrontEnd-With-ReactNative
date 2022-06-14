@@ -102,10 +102,10 @@ const ProductForm = (props) => {
     const addProduct = () => {
         if (
             name == "" ||
-            //brand == "" ||
+            brand == "" ||
             price == "" ||
             description == "" ||
-            //category == "" ||
+            category == "" ||
             countInStock == ""
         ) {
             setError("Please fill in the form correctly")
@@ -198,17 +198,17 @@ const ProductForm = (props) => {
                </TouchableOpacity>
            </View>
            <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Brand</Text>
+               <Text style={{ fontFamily: "nunito_regular"}}>Region</Text>
            </View>
            <Input 
-            placeholder="Brand"
+            placeholder="Region"
             name="brand"
             id="brand"
             value={brand}
             onChangeText={(text) => setBrand(text)}
            />
            <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Name</Text>
+               <Text style={{ fontFamily: "nunito_regular"}}>Product Name</Text>
            </View>
            <Input 
             placeholder="Name"
@@ -218,7 +218,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setName(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Price</Text>
+               <Text style={{ fontFamily: "nunito_regular"}}>Price</Text>
            </View>
            <Input 
             placeholder="Price"
@@ -229,7 +229,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setPrice(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline",fontFamily: "nunito_regular"}}>Count in Stock</Text>
+               <Text style={{ fontFamily: "nunito_regular"}}>Count in Stock</Text>
            </View>
            <Input 
             placeholder="Stock"
@@ -240,7 +240,7 @@ const ProductForm = (props) => {
             onChangeText={(text) => setCountInStock(text)}
            />
             <View style={styles.label}>
-               <Text style={{ textDecorationLine: "underline", fontFamily: "nunito_regular"}}>Description</Text>
+               <Text style={{  fontFamily: "nunito_regular"}}>Description</Text>
            </View>
            <Input 
             placeholder="Description"
@@ -260,8 +260,13 @@ const ProductForm = (props) => {
                     placeholderIconColor="#007aff"
                     onValueChange={(e) => [setPickerValue(e), setCategory(e)]}
                 >
-                    {categories.map((c) => {
-                        return <Picker.Item key={c.id} label={c.name} value={c.id} />
+                    {categories && categories.map((c) => {
+                    
+                        return (<Picker.Item
+                         key={c.id}
+                         label={c.name}
+                         value={c.id}
+                         />)
                     })}
                 </Picker>
            </Item>

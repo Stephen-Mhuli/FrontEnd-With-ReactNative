@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   View,
   StyleSheet,
@@ -60,6 +60,7 @@ const ProductContainer = (props) => {
           .catch((error) => {
             console.log('Api call error')
           })
+          //console.log(productsCtg);
     
         return () => {
           setProducts([]);
@@ -68,11 +69,60 @@ const ProductContainer = (props) => {
           setCategories([]);
           setActive();
           setInitialState();
+          setLoading(true);
+          //setProductsCtg([]);
+
         };
       },
-      [],
+      [] 
     )
   ))
+
+  // useEffect(()=>{
+  //   setFocus(false);
+  //       setActive(-1);
+        
+  //       // Products
+  //       axios
+  //         .get(`${baseURL}products`)
+  //         .then((res) => {
+  //           setProducts(res.data);
+  //           setProductsFiltered(res.data);
+  //           setProductsCtg(res.data);
+  //           setInitialState(res.data);
+  //           setLoading(false);
+  //           //console.log(res.data)
+  //         })
+  //         .catch((error) => {
+  //           console.log('Api call error')
+  //         })
+    
+  //       //Categories
+  //       axios
+  //         .get(`${baseURL}categories`)
+  //         .then((res) => {
+  //           setCategories(res.data);
+  //           //console.log(res.data);
+  //         })
+  //         .catch((error) => {
+  //           console.log('Api call error')
+  //         })
+  //         //console.log(productsCtg);
+    
+  //       return () => {
+  //         setProducts([]);
+  //         setProductsFiltered([]);
+  //         setFocus();
+  //         setCategories([]);
+  //         setActive();
+  //         setInitialState();
+  //         setLoading(true);
+  //         //setProductsCtg([]);
+
+  //       };
+  // },[])
+
+
     
    
   
@@ -99,7 +149,8 @@ const ProductContainer = (props) => {
         ? [setProductsCtg(initialState), setActive(true)]
         : [
             setProductsCtg(
-              products.filter((i) => i.category._id === ctg),
+              // products.filter((i) => i.category._id === ctg),
+              products.filter((i) => i.category?._id === ctg),
               setActive(true)
             ),
           ];
@@ -141,15 +192,39 @@ const ProductContainer = (props) => {
            setActive={setActive}
          />
        </View>
-       {/* {productsCtg.length > 0 ? ( */}
+       {/* i should use a flatlist here */}
        {productsCtg.length > 0 ? (
        <View style={styles.listContainer}>
-           {productsCtg.map((item,index) => {
+          {/* <FlatList
+            key={'_'}
+            nestedScrollEnabled
+            numColumns={2}
+            data={productsCtg}
+            keyExtractor={(item)=>{
+              return "_" + item.id
+            }}
+            renderItem={( itemData, index )=>{
+              return(
+                <ProductList
+                       navigation={props.navigation}
+                      //  key={item.id}
+                       item={itemData.item}
+                      // item={item} 
+                      index={index}
+                      //  index={index}
+                   />
+              )
+            }}
+          /> */}
+           {productsCtg.map((item, index) => {
+            //  console.log(productsCtg);
+            
                return(
                    <ProductList
                        navigation={props.navigation}
                        key={item.id}
                        item={item}
+                       index={index}
                    />
                );
            })}

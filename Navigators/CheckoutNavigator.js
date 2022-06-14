@@ -10,9 +10,29 @@ const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
     return(
-        <Tab.Navigator>
-            <Tab.Screen name="Shipping" component={Checkout} />
-            <Tab.Screen name="Payment" component={Payment} />
+        <Tab.Navigator 
+        screenOptions={{
+            tabBarLabelStyle: { fontSize: 16 },
+            tabBarActiveTintColor: '#e91e63',
+            // tabBarItemStyle: { width: 100 },
+            tabBarItemStyle: { fontFamily: 'nunito_bold' },
+            tabBarStyle: { backgroundColor: 'powderblue' },
+          }}
+        >
+            <Tab.Screen
+             name="Shipping" 
+             component={Checkout}
+             options={{
+                title: 'Shipping',
+                headerTitleStyle: {
+                    fontFamily: "nunito_bold"
+                  }
+            }}
+             />
+            <Tab.Screen
+             name="Payment" 
+             component={Payment} 
+             />
             <Tab.Screen name="Confirm" component={Confirm} />
         </Tab.Navigator>
     );

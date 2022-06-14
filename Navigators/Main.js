@@ -51,7 +51,7 @@ const Main = () => {
         }}
       />
       
-        <Tab.Screen
+        {/* <Tab.Screen
         name="Seller"
         component={SellerNavigator}
         options={{
@@ -59,11 +59,11 @@ const Main = () => {
             <Ionicons name="ios-person-add" size={24} color={color} />
           ),
         }}
-      />
+      /> */}
       
-      
+      {context.stateUser.user.isAdmin == true ? (
         <Tab.Screen
-        name="Admin"
+        name="Seller"
         component={AdminNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -71,6 +71,7 @@ const Main = () => {
           ),
         }}
       />
+      ): null }
       {/* {context.stateUser.user.isAdmin == true ? (): null } */}
       
       <Tab.Screen

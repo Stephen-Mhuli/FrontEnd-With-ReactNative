@@ -18,17 +18,18 @@ var { width } = Dimensions.get("window")
 const Item = (props) => {
     return (
         <View style={styles.item}>
-            <Text>{props.item.name}</Text>
+            <Text style={{ fontFamily: 'nunito_regular',fontSize: 20}}>{props.item.name}</Text>
             <EasyButton
                 danger
                 medium
                 onPress={() => props.delete(props.item._id)}
             >
-                <Text style={{ color: "white", fontWeight: "bold"}}>Delete</Text>
+                <Text style={{ color: "white",fontFamily: 'nunito_regular'}}>Delete</Text>
             </EasyButton>
         </View>
     )
 }
+
 
 const Categories = (props) => {
 
@@ -83,7 +84,7 @@ const Categories = (props) => {
         axios
         .delete(`${baseURL}categories/${id}`, config)
         .then((res) => {
-            const newCategories = categories.filter((item) => item.id !== id);
+            const newCategories = categories.filter((item) => item._id !== id);
             setCategories(newCategories);
         })
         .catch((error) => alert("Error to load categories"));
@@ -97,12 +98,12 @@ const Categories = (props) => {
                     renderItem={({ item, index }) => (
                         <Item item={item} index={index} delete={deleteCategory} />
                     )}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item._id}
                 />
             </View>
             <View style={styles.bottomBar}>
                 <View>
-                    <Text>Add Category</Text>
+                    <Text style={{ fontFamily: 'nunito_regular',fontSize: 14}}>Add Category</Text>
                 </View>
                 <View style={{ width: width / 2.5 }}>
                     <TextInput 
@@ -117,7 +118,7 @@ const Categories = (props) => {
                         primary
                         onPress={() => addCategory()}
                     >
-                        <Text style={{ color: "white", fontWeight: "bold"}}>Submit</Text>
+                        <Text style={{ color: "white",fontFamily: 'nunito_semi_bold'}}>Submit</Text>
                     </EasyButton>
                 </View>
             </View>
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     bottomBar: {
         backgroundColor: "white",
         width: width,
-        height: 60,
+        height: 80,
         padding: 2,
         flexDirection: "row",
         alignItems: "center",
@@ -141,7 +142,8 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         borderColor: "gray",
-        borderWidth: 1
+        borderWidth: 1,
+        borderRadius: 5,
     },
     item: {
         shadowColor: "#000",

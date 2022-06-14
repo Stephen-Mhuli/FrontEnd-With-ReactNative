@@ -1,10 +1,12 @@
 //import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, {useEffect} from "react";
 import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import {View, Text } from "react-native";
+import { NativeBaseProvider } from 'native-base';
 import Toast from "react-native-toast-message";
 import { useFonts } from 'expo-font';
+import * as Font from 'expo-font';
 // import { AppLoading } from 'expo';
 
 
@@ -43,6 +45,13 @@ const toastConfig = {
 
 
 export default function App() {
+
+  useEffect(() => {
+    (async () => await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+    }))();
+   }, [])
 
   //fonts
   const [fontsLoaded] = useFonts({

@@ -46,7 +46,7 @@ const Payment = (props) => {
                    return (
                        <ListItem key={item.name} onPress={() => setSelected(item.value)}>
                            <Left>
-                            <Text>{item.name}</Text>
+                            <Text style={{fontFamily: 'nunito_regular',fontSize: 16}}>{item.name}</Text>
                            </Left>
                            <Right>
                                <Radio selected={selected == item.value}/>
@@ -72,7 +72,7 @@ const Payment = (props) => {
                        })}
                    </Picker>
                ) : null }
-               <View style={{ marginTop: 60, alignSelf: 'center' }}>
+               <View style={{ marginTop: 60, alignSelf: 'center',margin: 8, padding: 8 }}>
                        <Button 
                        title={"Confirm"} 
                        onPress={() => props.navigation.navigate("Confirm", { order })}/>

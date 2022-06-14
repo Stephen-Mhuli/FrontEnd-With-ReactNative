@@ -114,7 +114,7 @@ const OrderCard = (props) => {
         </Text>
         <Text style={{ fontFamily: 'nunito_regular' }}>City: {props.city}</Text>
         <Text style={{ fontFamily: 'nunito_regular' }}>Country: {props.country}</Text>
-        <Text style={{ fontFamily: 'nunito_regular' }}>Date Ordered: {props.dateOrdered.split("T")[0]}</Text>
+        {/* <Text style={{ fontFamily: 'nunito_regular' }}>Date Ordered: {props.dateOrdered.split("T")[0]}</Text> */}
         <View style={styles.priceContainer}>
           <Text style={{ fontFamily: 'nunito_regular' }}>Price: </Text>
           <Text style={styles.price}>TZS {props.totalPrice}</Text>

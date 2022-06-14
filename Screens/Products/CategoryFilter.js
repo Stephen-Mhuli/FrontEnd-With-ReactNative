@@ -27,11 +27,11 @@ const CategoryFilter = (props) => {
                         <Text style={{ color: 'white', fontFamily: "nunito_semi_bold" }}>All</Text>
                     </Badge>
                 </TouchableOpacity>
-                {/* {props.categories.map((item, index) => (
+                {/* {props.categories.map((item) => (
                       <TouchableOpacity
-                      key={index}
+                      key={item._id}
                       onPress={() => {
-                          props.categoryFilter(item._id), 
+                          props.categoryFilter(item._id),
                           props.setActive(props.categories.indexOf(item))
                       }}
                   >

@@ -15,7 +15,7 @@ import { useEffect } from 'react/cjs/react.development';
 const UserProfile = (props) => {
     const context = useContext(AuthGlobal)
     const [userProfile, setUserProfile] = useState()
-    const [orders, setOrders] = useState()
+    const [orders, setOrders] = useState([])
 
     useFocusEffect(
         useCallback(() => {
@@ -29,7 +29,7 @@ const UserProfile = (props) => {
         AsyncStorage.getItem("jwt")
             .then((res) => {
                 axios
-                    .get(`${baseURL}users/${context.stateUser.user.sub}`, {
+                    .get(`${baseURL}users/${context.stateUser.user.userId}`, {
                         headers: { Authorization: `Bearer ${res}` },
                     })
                     .then((user) => setUserProfile(user.data))
@@ -40,9 +40,9 @@ const UserProfile = (props) => {
         .get(`${baseURL}orders`)
         .then((x) => {
             const data = x.data;
-            console.log(data)
+            //console.log(data)
             const userOrders = data.filter(
-                (order) => order.user._id === context.stateUser.user.sub
+                (order) => order.user._id == context.stateUser.user.userId
             );
             setOrders(userOrders);
         })
@@ -61,20 +61,15 @@ const UserProfile = (props) => {
                <Text style={{ fontSize: 30 , fontFamily: 'nunito_regular'}}>
                    {userProfile ? userProfile.name : "" }
                </Text>
-               <View style={{ marginTop: 20, fontFamily: 'nunito_regular' }}>
-                    <Text style={{ margin: 10 }}>
+               <View style={{ marginTop: 20 }}>
+                    <Text style={{ margin: 10, fontFamily: 'nunito_regular' }}>
                         Email: {userProfile ? userProfile.email : ""}
                     </Text>
                     <Text style={{ margin: 10 , fontFamily: 'nunito_regular'}}>
                         Phone: {userProfile ? userProfile.phone : ""}
                     </Text>
                </View>
-               <View style={{ marginTop: 80 }}>
-                    <Button title={"Sign Out"} onPress={() => [
-                        AsyncStorage.removeItem("jwt"),
-                        logoutUser(context.dispatch)
-                    ]}/>
-               </View>
+               
                <View style={styles.order}>
                    <Text style={{ fontSize: 20, fontFamily: 'nunito_semi_bold' }}>My Orders</Text>
                    <View>
@@ -88,6 +83,12 @@ const UserProfile = (props) => {
                            </View>
                        )}
                    </View>
+                   <View style={{ marginTop: 80 }}>
+                    <Button title={"Sign Out"} onPress={() => [
+                        AsyncStorage.removeItem("jwt"),
+                        logoutUser(context.dispatch)
+                    ]}/>
+               </View>
                </View>
            </ScrollView>
        </Container>

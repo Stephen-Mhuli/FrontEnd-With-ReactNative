@@ -37,8 +37,13 @@ const Orders = (props) => {
         <View>
             <FlatList 
                 data={orderList}
-                renderItem={({ item }) => (
-                    <OrderCard navigation={props.navigation} {...item} editMode={true}/>
+                renderItem={({ item,index }) => (
+                    <OrderCard
+                     navigation={props.navigation} 
+                     {...item} 
+                     editMode={true}
+                     index={index}
+                     />
                 )}
                 keyExtractor={(item) => item.id}
             />

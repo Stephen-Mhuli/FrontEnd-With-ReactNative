@@ -102,7 +102,7 @@ const Cart = (props) => {
                 </EasyButton>
             </Right>
             <Right>
-              {/* {context.stateUser.isAuthenticated ? ( */}
+              {context.stateUser.isAuthenticated ? (
                 <EasyButton
                   primary
                   medium
@@ -110,15 +110,15 @@ const Cart = (props) => {
                 >
                 <Text style={styles.buttonTextStyle}>Checkout</Text>
                 </EasyButton>
-              {/* // ) : ( */}
-                {/* <EasyButton
+               ) : ( 
+                <EasyButton
                   secondary
                   medium
                   onPress={() => props.navigation.navigate('Login')}
                 >
                 <Text style={styles.buttonTextStyle}>Login</Text>
-                </EasyButton> */}
-              {/* // )} */}
+                </EasyButton> 
+               )}
                 
             </Right>
           </View>

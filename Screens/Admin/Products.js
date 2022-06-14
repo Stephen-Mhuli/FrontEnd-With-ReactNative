@@ -100,7 +100,7 @@ const Products = (props) => {
             })
             .catch((error) => console.log(error));
     }
-
+ //console.log(productFilter)
   return (
     <View style={styles.container}>
         <View style={styles.buttonContainer}>
@@ -125,7 +125,7 @@ const Products = (props) => {
                 medium
                 onPress={() => props.navigation.navigate("Categories")}
             >
-                <Icon name="plus" size={18} color="white" />
+                <Icon name="plus" size={18} color="yellow" />
                 <Text style={styles.buttonText}>Categories</Text>
             </EasyButton> */}
         </View>
@@ -153,7 +153,7 @@ const Products = (props) => {
                 <ListItem 
                     {...item}
                     navigation={props.navigation}
-                    index={index}
+                    //  index={index}
                     delete={deleteProduct}
                 />
             )}
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
         marginLeft: 4,
         color: 'black',
         fontFamily: "nunito_bold",
-        fontSize: 15
+        fontSize: 11
     }
 })
 

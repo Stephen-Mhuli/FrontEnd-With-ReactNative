@@ -3,6 +3,7 @@ import { Text, View, Button } from 'react-native'
 import { Item, Picker, Toast } from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import FormContainer from '../../../Shared/Form/FormContainer'
+//import EasyButton from '../../../Shared/StyledComponents/EasyButton'
 
 import Input from '../../../Shared/Form/Input'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -122,7 +123,7 @@ const Checkout = (props) => {
                         })}
                     </Picker>
                 </Item>
-                <View style={{ width: '80%', alignItems: "center" }}>
+                <View style={{ width: '80%',margin: 10,padding: 8, alignItems: "center" }}>
                     <Button title="Confirm" onPress={() => checkOut()}/>
                 </View>
             </FormContainer>

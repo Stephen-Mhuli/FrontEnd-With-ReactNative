@@ -18,15 +18,15 @@ var { width } = Dimensions.get("window");
 const ProductCard = (props) => {
     const { name, price, image, countInStock } = props;
     
-
+    //console.log(image)
     return (
         <View style={styles.container}>
             <Image 
             style={styles.image}
             resizeMode="contain"
-            source={require('../../assets/images/maize.jpeg')}
-            // source={{uri: image ? 
-            //     image : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'}}
+            // source={require('../../assets/images/maize.jpeg')}
+            source={{uri: image ? 
+                image : 'https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png'}}
             />
             <View style={styles.card}/>
               <Text style={styles.title}>
