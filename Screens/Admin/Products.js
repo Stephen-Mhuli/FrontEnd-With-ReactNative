@@ -59,7 +59,8 @@ const Products = (props) => {
                         setToken(res)
                     })
                     .catch((error) => console.log(error))
-
+                    
+                // API call
                 axios
                     .get(`${baseURL}products`)
                     .then((res) => {
@@ -120,14 +121,14 @@ const Products = (props) => {
                 <Icon name="plus" size={18} color="yellow" />
                 <Text style={styles.buttonText}>Product</Text>
             </EasyButton>
-            {/* <EasyButton
+            <EasyButton
                 secondary
                 medium
                 onPress={() => props.navigation.navigate("Categories")}
             >
                 <Icon name="plus" size={18} color="yellow" />
                 <Text style={styles.buttonText}>Categories</Text>
-            </EasyButton> */}
+            </EasyButton>
         </View>
       <View>
           <Header searchBar rounded>

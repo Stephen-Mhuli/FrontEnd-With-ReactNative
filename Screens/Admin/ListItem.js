@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: "white",
-        fontFamily: "nunito_regular"
+        fontFamily: "nunito_semi_bold"
         //fontWeight: "bold"
     }
 })

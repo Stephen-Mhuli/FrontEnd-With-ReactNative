@@ -71,9 +71,9 @@ const UserProfile = (props) => {
                </View>
                
                <View style={styles.order}>
-                   <Text style={{ fontSize: 20, fontFamily: 'nunito_semi_bold' }}>My Orders</Text>
+                   {/* <Text style={{ fontSize: 20, fontFamily: 'nunito_semi_bold' }}>My Orders</Text> */}
                    <View>
-                       {orders ? (
+                       {/* {orders ? (
                            orders.map((x) => {
                                return <OrderCard key={x.id} {...x} />;
                            })
@@ -81,11 +81,11 @@ const UserProfile = (props) => {
                            <View style={styles.order}>
                                <Text style={{fontFamily: 'nunito_regular'}}>You have no orders</Text>
                            </View>
-                       )}
+                       )} */}
                    </View>
                    <View style={{ marginTop: 80 }}>
                     <Button title={"Sign Out"} onPress={() => [
-                        AsyncStorage.removeItem("jwt"),
+                        AsyncStorage.removeItem("token"),
                         logoutUser(context.dispatch)
                     ]}/>
                </View>

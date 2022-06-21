@@ -34,6 +34,18 @@ const ProductContainer = (props) => {
       () => {
         setFocus(false);
         setActive(-1);
+
+
+         //Categories
+         axios
+         .get(`${baseURL}categories`)
+         .then((res) => {
+            setCategories(res.data);
+           //console.log(res.data);
+         })
+         .catch((error) => {
+           console.log('Api call error for categories')
+         })
         
         // Products
         axios
@@ -47,21 +59,9 @@ const ProductContainer = (props) => {
             //console.log(res.data)
           })
           .catch((error) => {
-            console.log('Api call error')
+            console.log('Api call error for products')
           })
-    
-        //Categories
-        axios
-          .get(`${baseURL}categories`)
-          .then((res) => {
-            setCategories(res.data);
-            //console.log(res.data);
-          })
-          .catch((error) => {
-            console.log('Api call error')
-          })
-          //console.log(productsCtg);
-    
+           
         return () => {
           setProducts([]);
           setProductsFiltered([]);
@@ -78,53 +78,6 @@ const ProductContainer = (props) => {
     )
   ))
 
-  // useEffect(()=>{
-  //   setFocus(false);
-  //       setActive(-1);
-        
-  //       // Products
-  //       axios
-  //         .get(`${baseURL}products`)
-  //         .then((res) => {
-  //           setProducts(res.data);
-  //           setProductsFiltered(res.data);
-  //           setProductsCtg(res.data);
-  //           setInitialState(res.data);
-  //           setLoading(false);
-  //           //console.log(res.data)
-  //         })
-  //         .catch((error) => {
-  //           console.log('Api call error')
-  //         })
-    
-  //       //Categories
-  //       axios
-  //         .get(`${baseURL}categories`)
-  //         .then((res) => {
-  //           setCategories(res.data);
-  //           //console.log(res.data);
-  //         })
-  //         .catch((error) => {
-  //           console.log('Api call error')
-  //         })
-  //         //console.log(productsCtg);
-    
-  //       return () => {
-  //         setProducts([]);
-  //         setProductsFiltered([]);
-  //         setFocus();
-  //         setCategories([]);
-  //         setActive();
-  //         setInitialState();
-  //         setLoading(true);
-  //         //setProductsCtg([]);
-
-  //       };
-  // },[])
-
-
-    
-   
   
 
   // Product Methods

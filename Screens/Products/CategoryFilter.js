@@ -27,11 +27,11 @@ const CategoryFilter = (props) => {
                         <Text style={{ color: 'white', fontFamily: "nunito_semi_bold" }}>All</Text>
                     </Badge>
                 </TouchableOpacity>
-                {/* {props.categories.map((item) => (
+                {props.categories.map((item) => (
                       <TouchableOpacity
-                      key={item._id}
+                      key={item.id}
                       onPress={() => {
-                          props.categoryFilter(item._id),
+                          props.categoryFilter(item.id),
                           props.setActive(props.categories.indexOf(item))
                       }}
                   >
@@ -45,7 +45,8 @@ const CategoryFilter = (props) => {
                           
                       </Badge>
                   </TouchableOpacity>
-                ))} */}
+                ))}
+                {/* <Text>{JSON.stringify(props)}</Text> */}
             </ListItem>
         </ScrollView>
     )

@@ -55,6 +55,12 @@ export const logoutUser = (dispatch) => {
     dispatch(setCurrentUser({}))
 }
 
+// export const logoutUser = dispatch => async() => {
+//     await AsyncStorage.removeItem("token");
+//     dispatch(setCurrentUser({}));
+//     navigate('Login');
+// }
+
 export const setCurrentUser = (decoded, user) => {
     return {
         type: SET_CURRENT_USER,

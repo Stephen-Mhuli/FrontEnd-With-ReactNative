@@ -5,6 +5,7 @@ import Orders from "../Screens/Admin/Order"
 import Products from "../Screens/Admin/Products"
 import ProductForm from "../Screens/Admin/ProductForm"
 import Categories from "../Screens/Admin/Categories"
+import Users from "../Screens/Admin/Users"
 
 const Stack = createStackNavigator();
 

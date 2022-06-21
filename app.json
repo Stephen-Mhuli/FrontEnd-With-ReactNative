@@ -4,9 +4,9 @@
     "slug": "fcs-shop",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo1.jpeg",
+    "icon": "./assets/favicon.png",
     "splash": {
-      "image": "./assets/logo1.jpeg",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -28,6 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "it is an app for farmers when wants to sell their products online"
   }
 }

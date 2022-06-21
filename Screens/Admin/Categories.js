@@ -22,7 +22,7 @@ const Item = (props) => {
             <EasyButton
                 danger
                 medium
-                onPress={() => props.delete(props.item._id)}
+                onPress={() => props.delete(props.item.id)}
             >
                 <Text style={{ color: "white",fontFamily: 'nunito_regular'}}>Delete</Text>
             </EasyButton>
@@ -98,7 +98,7 @@ const Categories = (props) => {
                     renderItem={({ item, index }) => (
                         <Item item={item} index={index} delete={deleteCategory} />
                     )}
-                    keyExtractor={(item) => item._id}
+                    keyExtractor={(item) => item.id}
                 />
             </View>
             <View style={styles.bottomBar}>
