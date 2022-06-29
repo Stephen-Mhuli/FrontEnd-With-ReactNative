@@ -132,9 +132,9 @@ const ProductContainer = (props) => {
  ) : (
    <ScrollView>
      <View>
-       <View>
+       {/* <View>
          <Banner />
-       </View>
+       </View> */}
        <View>
          <CategoryFilter
           //  categories={categories.categories}
@@ -148,27 +148,6 @@ const ProductContainer = (props) => {
        {/* i should use a flatlist here */}
        {productsCtg.length > 0 ? (
        <View style={styles.listContainer}>
-          {/* <FlatList
-            key={'_'}
-            nestedScrollEnabled
-            numColumns={2}
-            data={productsCtg}
-            keyExtractor={(item)=>{
-              return "_" + item.id
-            }}
-            renderItem={( itemData, index )=>{
-              return(
-                <ProductList
-                       navigation={props.navigation}
-                      //  key={item.id}
-                       item={itemData.item}
-                      // item={item} 
-                      index={index}
-                      //  index={index}
-                   />
-              )
-            }}
-          /> */}
            {productsCtg.map((item, index) => {
             //  console.log(productsCtg);
             

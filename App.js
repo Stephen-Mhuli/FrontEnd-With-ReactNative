@@ -7,8 +7,6 @@ import { NativeBaseProvider } from 'native-base';
 import Toast from "react-native-toast-message";
 import { useFonts } from 'expo-font';
 import * as Font from 'expo-font';
-// import { AppLoading } from 'expo';
-
 
 
 // Redux

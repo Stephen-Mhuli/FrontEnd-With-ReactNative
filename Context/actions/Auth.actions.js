@@ -56,7 +56,7 @@ export const logoutUser = (dispatch) => {
 }
 
 // export const logoutUser = dispatch => async() => {
-//     await AsyncStorage.removeItem("token");
+//     await AsyncStorage.removeItem("jwt");
 //     dispatch(setCurrentUser({}));
 //     navigate('Login');
 // }

@@ -15,7 +15,7 @@ const countries = require("../../../assets/countries.json");
 
 const Checkout = (props) => {
     const context = useContext(AuthGlobal)
-
+    //console.log(props.cartItems)
     const [ orderItems, setOrderItems ] = useState();
     const [ address, setAddress ] = useState();
     const [ address2, setAddress2 ] = useState();

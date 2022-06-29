@@ -3,7 +3,7 @@ import { View, Text, ScrollView, Button, StyleSheet } from 'react-native';
 import { Container } from "native-base"
 import { useFocusEffect } from "@react-navigation/native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import OrderCard from "../../Shared/OrderCard"
+//import OrderCard from "../../Shared/OrderCard"
 
 import axios from "axios"
 import baseURL from "../../assets/common/baseUrl"
@@ -15,7 +15,8 @@ import { useEffect } from 'react/cjs/react.development';
 const UserProfile = (props) => {
     const context = useContext(AuthGlobal)
     const [userProfile, setUserProfile] = useState()
-    const [orders, setOrders] = useState([])
+    const [loading, setLoading] = useState(true)
+    // const [orders, setOrders] = useState([])
 
     useFocusEffect(
         useCallback(() => {
@@ -42,7 +43,7 @@ const UserProfile = (props) => {
             const data = x.data;
             //console.log(data)
             const userOrders = data.filter(
-                (order) => order.user._id == context.stateUser.user.userId
+                (order) => order.user._id === context.stateUser.user.userId
             );
             setOrders(userOrders);
         })
@@ -51,6 +52,7 @@ const UserProfile = (props) => {
         return () => {
             setUserProfile();
             setOrders();
+            setLoading(false)
         }
 
     }, [context.stateUser.isAuthenticated]))
@@ -85,7 +87,7 @@ const UserProfile = (props) => {
                    </View>
                    <View style={{ marginTop: 80 }}>
                     <Button title={"Sign Out"} onPress={() => [
-                        AsyncStorage.removeItem("token"),
+                        AsyncStorage.removeItem("jwt"),
                         logoutUser(context.dispatch)
                     ]}/>
                </View>

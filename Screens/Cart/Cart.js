@@ -23,7 +23,7 @@ import * as actions from "../../Redux/Actions/cartActions";
 import AuthGlobal from "../../Context/store/AuthGlobal"
 import axios from "axios";
 import baseURL from "../../assets/common/baseUrl";
-import AsyncStorage from "@react-native-async-storage/async-storage"
+//import AsyncStorage from "@react-native-async-storage/async-storage"
 
 var { height, width } = Dimensions.get("window");
 

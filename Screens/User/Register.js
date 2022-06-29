@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, Radio, Group } from "react-native";
 import FormContainer from "../../Shared/Form/FormContainer";
 import Input from "../../Shared/Form/Input";
 import Error from "../../Shared/Error";
@@ -16,6 +16,7 @@ const Register = (props) => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const register = () => {
     if (email === "" || name === "" || phone === "" || password === "") {
@@ -63,6 +64,13 @@ const Register = (props) => {
   //     setState({...state, emailError: "" });
   //   }
   // };
+  const onChangeCB = (e) => {
+    if (!e.target.checked) {
+      setUser({ ...user, [e.target.name]: false });
+    } else if (e.target.checked) {
+      setUser({ ...user, [e.target.name]: true });
+    }
+  };
 
   return (
     <KeyboardAwareScrollView
@@ -100,6 +108,23 @@ const Register = (props) => {
         <View style={styles.buttonGroup}>
           {error ? <Error message={error} /> : null}
         </View>
+        {/* <View>
+          <Radio.Group
+           name="isAdmin"
+           id = "isAdmin"
+           accessibilityLabel="favorite number" 
+           value={isAdmin} 
+           onChange={setIsAdmin(true)}
+           >
+             <Radio value={isAdmin} my={1}>
+              User
+             </Radio>
+             <Radio value={!isAdmin} my={1}>
+              Seller
+             </Radio>
+            
+          </Radio.Group>
+        </View> */}
         <View>
           <EasyButton large primary onPress={() => register()}>
             <Text style={styles.buttonTextStyle}>Register</Text>
